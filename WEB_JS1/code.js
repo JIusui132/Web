@@ -192,4 +192,4 @@ function triangle(val1, type1, val2, type2) {
     return "success";
 }
 
-triangle(2, "leg", 3, "hypotenuse"); 
+triangle(5, "leg", 3, "hypotenuse"); 
