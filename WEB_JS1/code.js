@@ -28,20 +28,20 @@ function triangle(val1, type1, val2, type2) {
                         return "failed";
                     }
                     b = Math.sqrt(c ** 2 - a ** 2);
-                    alpha = Math.atan(a / b) * 180 / Math.PI;
+                    alpha = Math.acos(a / c) * 180 / Math.PI;
                     beta = 90 - alpha;
                     break;
                 case "adjacent":
                     beta = val2;
-                    if (val2 >= 90 || val2 <= 0) return "failed";
-                    b = a / Math.tan(val2 * Math.PI / 180);
+                    if (beta >= 90 || beta <= 0) return "failed";
+                    b = a / Math.tan(beta * Math.PI / 180);
                     c = Math.sqrt(a ** 2 + b ** 2);
                     alpha = 90 - beta;
                     break;
                 case "opposite":
                     alpha = val2;
-                    if (val2 >= 90 || val2 <= 0) return "failed";
-                    b = a * Math.tan(val2 * Math.PI / 180);
+                    if (alpha >= 90 || alpha <= 0) return "failed";
+                    b = a * Math.tan(alpha * Math.PI / 180);
                     c = Math.sqrt(a ** 2 + b ** 2);
                     beta = 90 - alpha;
                     break;
@@ -59,22 +59,22 @@ function triangle(val1, type1, val2, type2) {
                         return "failed";
                     }
                     b = Math.sqrt(c ** 2 - a ** 2);
-                    alpha = Math.acos(a / c) * 180 / Math.PI;
+                    alpha = Math.asin(a / c) * 180 / Math.PI;
                     beta = 90 - alpha;
                     break;
                 case "hypotenuse":
                     return "failed";
                 case "adjacent":
                     beta = val2;
-                    if (val2 >= 90 || val2 <= 0) return "failed";
-                    a = c * Math.cos(val2 * Math.PI / 180);
+                    if (beta >= 90 || beta <= 0) return "failed";
+                    a = c * Math.cos(beta * Math.PI / 180);
                     b = Math.sqrt(c ** 2 - a ** 2);
                     alpha = 90 - beta;
                     break;
                 case "opposite":
                     alpha = val2;
-                    if (val2 >= 90 || val2 <= 0) return "failed";
-                    b = c * Math.sin(val2 * Math.PI / 180);
+                    if (alpha >= 90 || alpha <= 0) return "failed";
+                    b = c * Math.sin(alpha * Math.PI / 180);
                     a = Math.sqrt(c ** 2 - b ** 2);
                     beta = 90 - alpha;
                     break;
@@ -152,11 +152,44 @@ function triangle(val1, type1, val2, type2) {
                     return "failed";
             }
             break;
+        case "angle":
+            switch (type2) {
+                case "leg":
+                    return "failed";
+                case "hypotenuse":
+                    return "failed";
+                case "adjacent":
+                    beta = val1;
+                    if (beta >= 90 || beta <= 0) return "failed";
+                    a = val2;
+                    if (a <= 0) {
+                        console.log("Катет має бути більше 0.");
+                        return "failed";
+                    }
+                    b = a * Math.tan(beta * Math.PI / 180);
+                    c = a / Math.cos(beta * Math.PI / 180);
+                    alpha = 90 - beta;
+                    break;
+                case "opposite":
+                    alpha = val1;
+                    if (alpha >= 90 || alpha <= 0) return "failed";
+                    a = val2;
+                    if (a <= 0) {
+                        console.log("Катет має бути більше 0.");
+                        return "failed";
+                    }
+                    b = a * Math.tan(alpha * Math.PI / 180);
+                    c = a / Math.sin(alpha * Math.PI / 180);
+                    beta = 90 - alpha;
+                    break;
+                case "angle":
+                    return "failed";
+            }
+            break;
     }
 
     console.log(`c = ${c}, a = ${a}, b = ${b}, alpha = ${alpha}, beta = ${beta}`);
     return "success";
 }
 
-
-triangle(3, "leg", 5, "hypotenuse");
+triangle(2, "leg", 3, "hypotenuse"); 
