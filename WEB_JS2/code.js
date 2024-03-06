@@ -1,4 +1,3 @@
-// Бібліотека 1
 (function () {
     var speakWord = "Hello";
 
@@ -12,7 +11,6 @@
 
 })();
 
-// Бібліотека 2
 (function () {
     var speakWord = "Goodbye";
 
@@ -26,7 +24,6 @@
 
 })();
 
-// Головний скрипт
 (function () {
     var names = ["John", "Jane", "Jim", "Jill", "Bob"];
 
@@ -41,7 +38,6 @@
     }
 })();
 
-// Додатковий функціонал - селекція імен за довжиною
 (function () {
     var names = ["John", "Jane", "Jim", "Jill", "Bob"];
     var shortNames = [];
