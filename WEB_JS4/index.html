@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Library Demo</title>
+    <script src="code.js"></script>
+</head>
+<body>
+    <h1>Sorting Library Demo</h1>
+
+    <h2>Sorted Array (Non-Sparse)</h2>
+    <div id="nonSparseDemo"></div>
+
+    <h2>Sorted Array (Sparse)</h2>
+    <div id="sparseDemo"></div>
+
+    <script>
+        // Test arrays
+        const nonSparseArray = [5, 3, 8, 1, 9, 2, 7, 4, 6];
+        const sparseArray = [5, 3, , , 1, , 9, , , 2, 7, , , 4, 6];
+
+        // Sort non-sparse array
+        document.getElementById("nonSparseDemo").innerHTML = "<p>Original array: " + nonSparseArray.join(", ") + "</p>";
+        document.getElementById("nonSparseDemo").innerHTML += "<p>Exchange sort result (asc): " + SortingLibrary.exchangeSort([...nonSparseArray]).join(", ") + "</p>";
+        document.getElementById("nonSparseDemo").innerHTML += "<p>Min element sort result (asc): " + SortingLibrary.minElementSort([...nonSparseArray]).join(", ") + "</p>";
+        document.getElementById("nonSparseDemo").innerHTML += "<p>Insertion sort result (asc): " + SortingLibrary.insertionSort([...nonSparseArray]).join(", ") + "</p>";
+        document.getElementById("nonSparseDemo").innerHTML += "<p>Shell sort result (asc): " + SortingLibrary.shellSort([...nonSparseArray]).join(", ") + "</p>";
+        document.getElementById("nonSparseDemo").innerHTML += "<p>Quick sort result (asc): " + SortingLibrary.quickSort([...nonSparseArray]).join(", ") + "</p>";
+
+        // Sort sparse array
+        document.getElementById("sparseDemo").innerHTML = "<p>Original array: " + sparseArray.join(", ") + "</p>";
+        document.getElementById("sparseDemo").innerHTML += "<p>Exchange sort result (asc): " + SortingLibrary.exchangeSort([...sparseArray]).join(", ") + "</p>";
+        document.getElementById("sparseDemo").innerHTML += "<p>Min element sort result (asc): " + SortingLibrary.minElementSort([...sparseArray]).join(", ") + "</p>";
+        document.getElementById("sparseDemo").innerHTML += "<p>Insertion sort result (asc): " + SortingLibrary.insertionSort([...sparseArray]).join(", ") + "</p>";
+        document.getElementById("sparseDemo").innerHTML += "<p>Shell sort result (asc): " + SortingLibrary.shellSort([...sparseArray]).join(", ") + "</p>";
+        document.getElementById("sparseDemo").innerHTML += "<p>Quick sort result (asc): " + SortingLibrary.quickSort([...sparseArray]).join(", ") + "</p>";
+    </script>
+</body>
+</html>
