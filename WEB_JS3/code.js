@@ -341,6 +341,7 @@ console.log("π * 3/2 =", multiplyBy32());
 console.log("π / 2 =", divideBy2());
 
 // 1.2.28
+// 1.2.28
 function Painter(color) {
     return function(obj) {
         if (obj && obj.type) {
@@ -356,21 +357,18 @@ const PaintBlue = Painter("Blue");
 const PaintRed = Painter("Red");
 const PaintYellow = Painter("Yellow");
 
-const obj1 = { type: "Object 1" };
-const obj2 = { type: "Object 2" };
-const obj3 = { };
-
-PaintBlue(obj1);
-PaintRed(obj2);
-PaintYellow(obj3);
+// Перенесення тестових об'єктів всередину функцій
+PaintBlue({ type: "Object 1" });
+PaintRed({ type: "Object 2" });
+PaintYellow({ });
 
 // 1.2.30
 function Painter(color) {
     return function(obj) {
-        if (obj && obj.type) {
+        if (obj && obj.maxSpeed !== undefined) {
             console.log(`${color}: ${obj.type}`);
         } else {
-            console.log(`No 'type' property occurred!`);
+            console.log(`No 'maxSpeed' property occurred!`);
         }
     };
 }
@@ -379,6 +377,7 @@ function Painter(color) {
 const PaintBlue = Painter("Blue");
 const PaintRed = Painter("Red");
 const PaintYellow = Painter("Yellow");
+
 // Тестові об'єкти для функцій PaintBlue, PaintRed та PaintYellow
 const obj1 = { maxSpeed: 280, type: "Truck" };
 const obj2 = { maxSpeed: 180, type: "Sportcar", avgSpeed: 90, color: "purple" };
@@ -388,11 +387,3 @@ const obj3 = { color: "magenta", loadCapacity: 2400, isCar: true };
 PaintBlue(obj1);
 PaintRed(obj2);
 PaintYellow(obj3);
-
-
-
-
-
-
-
-
