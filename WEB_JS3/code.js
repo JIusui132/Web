@@ -1,83 +1,4 @@
-//1.2.3
-var car1 = new Object();
-car1.color = "red";
-car1.maxSpeed = 200;
-car1.driver = {
-    name: "John Doe",
-    category: "C",
-    personalLimitations: "No driving at night"
-};
-car1.tuning = true;
-car1.numberOfAccidents = 0;
-//1.2.4
-var car2 = {
-    color: "blue",
-    maxSpeed: 180,
-    driver: {
-        name: "Jane Smith",
-        category: "B",
-        personalLimitations: null
-    },
-    tuning: false,
-    numberOfAccidents: 2
-};
-//1.2.5
-car1.drive = function() {
-    console.log("I am not driving at night");
-};
-//1.2.6
-car2.drive = function() {
-    console.log("I can drive anytime");
-};
-//1.2.7
-function Truck(color, weight, avgSpeed, brand, model) {
-    this.color = color;
-    this.weight = weight;
-    this.avgSpeed = avgSpeed;
-    this.brand = brand;
-    this.model = model;
-}
-//1.2.8
-function Truck(color, weight, avgSpeed, brand, model) {
-    this.color = color;
-    this.weight = weight;
-    this.avgSpeed = avgSpeed;
-    this.brand = brand;
-    this.model = model;
-}
-
-Truck.prototype.AssignDriver = function(name, nightDriving, experience) {
-    this.driver = {
-        name: name,
-        nightDriving: nightDriving,
-        experience: experience
-    };
-};
-//1.2.9
-function Truck(color, weight, avgSpeed, brand, model) {
-    this.color = color;
-    this.weight = weight;
-    this.avgSpeed = avgSpeed;
-    this.brand = brand;
-    this.model = model;
-    
-    this.trip = function() {
-        if (!this.driver) {
-            console.log("No driver assigned");
-        } else {
-            var message = "Driver " + this.driver.name;
-            if (this.driver.nightDriving) {
-                message += " drives at night";
-            } else {
-                message += " does not drive at night";
-            }
-            message += " and has " + this.driver.experience + " years of experience";
-            console.log(message);
-        }
-    };
-}
-//1.2.10 - 1.2.11
-
+// Клас Truck
 class Truck {
     constructor(color, weight, avgSpeed, brand, model) {
         this.color = color;
@@ -87,7 +8,7 @@ class Truck {
         this.model = model;
     }
 
-
+    // Статичний метод для призначення водія
     static AssignDriver(truck, name, nightDriving, experience) {
         truck.driver = {
             name: name,
@@ -96,7 +17,7 @@ class Truck {
         };
     }
 
-
+    // Метод для виконання поїздки
     trip() {
         if (!this.driver) {
             console.log("No driver assigned");
@@ -112,50 +33,33 @@ class Truck {
         }
     }
 }
+
+// Екземпляри класу Truck
 let truck1 = new Truck("red", 5000, 60.5, "Ford", "F-150");
 let truck2 = new Truck("blue", 6000, 55.0, "Chevrolet", "Silverado");
-//1.2.12
-class Square {
-    constructor(a) {
-        this.a = a;
-    }
-}
 
-//1.2.13
-class Square {
-    constructor(a) {
-        this.a = a;
-    }
-}
-
-//1.2.14
+// Клас Square
 class Square {
     constructor(a) {
         this.a = a;
     }
 
-    static help() {
-        console.log("A square is a quadrilateral with four equal sides and four right angles.");
-    }
-}
-//1.2.15
-class Square {
-    constructor(a) {
-        this.a = a;
-    }
-
+    // Статичний метод для пояснення квадрата
     static help() {
         console.log("A square is a quadrilateral with four equal sides and four right angles.");
     }
 
+    // Метод для визначення довжини сторін
     length() {
         console.log("The length of all sides of the square is: ", 4 * this.a);
     }
 
+    // Метод для визначення площі
     square() {
         console.log("The area of the square is: ", this.a * this.a);
     }
 
+    // Метод для виведення інформації про квадрат
     info() {
         console.log("Square Characteristics:");
         console.log("Length of all sides:", 4 * this.a);
@@ -164,32 +68,30 @@ class Square {
         console.log("Area:", this.a * this.a);
     }
 }
-//1.2.16
-class Rectangle extends Square {
-    constructor(a, b) {
-        super(a);
-        this.b = b;
-    }
-}
-//1.2.17
+
+// Клас Rectangle
 class Rectangle extends Square {
     constructor(a, b) {
         super(a);
         this.b = b;
     }
 
+    // Статичний метод для пояснення прямокутника
     static help() {
         console.log("A rectangle is a quadrilateral with opposite sides equal and four right angles.");
     }
 
+    // Перевизначення методу для визначення довжини сторін
     length() {
         console.log("The length of the rectangle is: ", 2 * (this.a + this.b));
     }
 
+    // Перевизначення методу для визначення площі
     square() {
         console.log("The area of the rectangle is: ", this.a * this.b);
     }
 
+    // Перевизначення методу для виведення інформації про прямокутник
     info() {
         console.log("Rectangle Characteristics:");
         console.log("Length of side 'a':", this.a);
@@ -199,7 +101,8 @@ class Rectangle extends Square {
         console.log("Area:", this.a * this.b);
     }
 }
-//1.2.18 - 1.2.19
+
+// Клас Rhombus
 class Rhombus extends Square {
     constructor(a, alpha, beta) {
         super(a);
@@ -207,18 +110,22 @@ class Rhombus extends Square {
         this.beta = beta;
     }
 
+    // Статичний метод для пояснення ромба
     static help() {
         console.log("A rhombus is a quadrilateral with all four sides equal and opposite angles equal.");
     }
 
+    // Перевизначення методу для визначення периметра
     length() {
         console.log("The perimeter of the rhombus is: ", 4 * this.a);
     }
 
+    // Перевизначення методу для визначення площі
     square() {
         console.log("The area of the rhombus is: ", this.a * this.a * Math.sin(this.alpha * Math.PI / 180));
     }
 
+    // Перевизначення методу для виведення інформації про ромб
     info() {
         console.log("Rhombus Characteristics:");
         console.log("Length of side 'a':", this.a);
@@ -228,15 +135,8 @@ class Rhombus extends Square {
         console.log("Area:", this.a * this.a * Math.sin(this.alpha * Math.PI / 180));
     }
 }
-//1.2.20
-class Parallelogram extends Rectangle {
-    constructor(a, b, alpha, beta) {
-        super(a, b);
-        this.alpha = alpha;
-        this.beta = beta;
-    }
-}
-//1.2.21
+
+// Клас Parallelogram
 class Parallelogram extends Rectangle {
     constructor(a, b, alpha, beta) {
         super(a, b);
@@ -244,18 +144,22 @@ class Parallelogram extends Rectangle {
         this.beta = beta;
     }
 
+    // Статичний метод для пояснення паралелограма
     static help() {
         console.log("A parallelogram is a quadrilateral with opposite sides parallel and equal.");
     }
 
+    // Перевизначення методу для визначення периметра
     length() {
         console.log("The perimeter of the parallelogram is: ", 2 * (this.a + this.b));
     }
 
+    // Перевизначення методу для визначення площі
     square() {
         console.log("The area of the parallelogram is: ", this.a * this.b * Math.sin(this.alpha * Math.PI / 180));
     }
 
+    // Перевизначення методу для виведення інформації про паралелограм
     info() {
         console.log("Parallelogram Characteristics:");
         console.log("Length of side 'a':", this.a);
@@ -266,7 +170,8 @@ class Parallelogram extends Rectangle {
         console.log("Area:", this.a * this.b * Math.sin(this.alpha * Math.PI / 180));
     }
 }
-//1.2.22
+
+// Клас Rhombus з додаванням геттерів та сеттерів для кутів
 class Rhombus extends Square {
     constructor(a, alpha, beta) {
         super(a);
@@ -274,30 +179,34 @@ class Rhombus extends Square {
         this.beta = beta;
     }
 
-    // Ґеттер та сеттер для alpha
+    // Геттер для кута alpha
     get angleAlpha() {
         return this.alpha;
     }
 
+    // Сеттер для кута alpha
     set angleAlpha(value) {
         this.alpha = value;
     }
 
-    // Ґеттер та сеттер для beta
+    // Геттер для кута beta
     get angleBeta() {
         return this.beta;
     }
 
+    // Сеттер для кута beta
     set angleBeta(value) {
         this.beta = value;
     }
 }
-//1.2.23
+
+// Виклик методу help для всіх класів
 Square.help();
 Rectangle.help();
 Rhombus.help();
 Parallelogram.help();
-//1.2.24
+
+// Створення екземплярів і виведення інформації про них
 let square = new Square(5);
 let rectangle = new Rectangle(4, 6);
 let rhombus = new Rhombus(5, 60, 120);
@@ -307,7 +216,8 @@ square.info();
 rectangle.info();
 rhombus.info();
 parallelogram.info();
-//1.2.25
+
+// Функція для обчислення параметрів трикутника
 function Triangular(a, b, c) {
     let p = (a + b + c) / 2;
     let area = Math.sqrt(p * (p - a) * (p - b) * (p - c));
@@ -321,27 +231,20 @@ function Triangular(a, b, c) {
         height: height
     };
 }
-//1.2.26
+
+// Функція для створення об'єкту трикутника зі значеннями за замовчуванням
 function Triangular(a = 3, b = 4, c = 5) {
     return { a, b, c };
 }
-// 1.2.27
+
+// Функція для множення числа на π
 function PiMultiplier(num) {
     return function() {
         return Math.PI * num;
     };
 }
 
-const multiplyBy2 = PiMultiplier(2);
-const multiplyBy32 = PiMultiplier(3/2);
-const divideBy2 = PiMultiplier(1/2);
-
-console.log("π * 2 =", multiplyBy2());
-console.log("π * 3/2 =", multiplyBy32());
-console.log("π / 2 =", divideBy2());
-
-// 1.2.28
-// 1.2.28
+// Функція для розфарбовування об'єктів
 function Painter(color) {
     return function(obj) {
         if (obj && obj.type) {
@@ -352,38 +255,23 @@ function Painter(color) {
     };
 }
 
-// 1.2.29
+// Виклики функцій
+const multiplyBy2 = PiMultiplier(2);
+const multiplyBy32 = PiMultiplier(3/2);
+const divideBy2 = PiMultiplier(1/2);
+
+console.log("π * 2 =", multiplyBy2());
+console.log("π * 3/2 =", multiplyBy32());
+console.log("π / 2 =", divideBy2());
+
 const PaintBlue = Painter("Blue");
 const PaintRed = Painter("Red");
 const PaintYellow = Painter("Yellow");
 
-// Перенесення тестових об'єктів всередину функцій
-PaintBlue({ type: "Object 1" });
-PaintRed({ type: "Object 2" });
-PaintYellow({ });
+const obj1 = { type: "Object 1" };
+const obj2 = { type: "Object 2" };
+const obj3 = { };
 
-// 1.2.30
-function Painter(color) {
-    return function(obj) {
-        if (obj && obj.maxSpeed !== undefined) {
-            console.log(`${color}: ${obj.type}`);
-        } else {
-            console.log(`No 'maxSpeed' property occurred!`);
-        }
-    };
-}
-
-// 1.2.31
-const PaintBlue = Painter("Blue");
-const PaintRed = Painter("Red");
-const PaintYellow = Painter("Yellow");
-
-// Тестові об'єкти для функцій PaintBlue, PaintRed та PaintYellow
-const obj1 = { maxSpeed: 280, type: "Truck" };
-const obj2 = { maxSpeed: 180, type: "Sportcar", avgSpeed: 90, color: "purple" };
-const obj3 = { color: "magenta", loadCapacity: 2400, isCar: true };
-
-// Демонстрація роботи функцій
 PaintBlue(obj1);
 PaintRed(obj2);
 PaintYellow(obj3);
