@@ -31,14 +31,14 @@ Truck.prototype.trip = function() {
 };
 
 console.log("Task 1.2.10");
-const truck1 = new Truck("Green", 10000, 110, "Renault", "Trafic");
-truck1.AssignDriver("Vlad Gerula", true, 3);
+const truck1 = new Truck("Green", 10000, 110, "Skoda", "Octavia");
+truck1.AssignDriver("Driver", true, 3);
 
 console.log("Trip Truck1:");
 truck1.trip();
 
-const truck2 = new Truck("Yellow",11000, 95, "Renault", "Master");
-truck2.AssignDriver("Vlad Gerula", false, 1);
+const truck2 = new Truck("Yellow",11000, 95, "Skoda", "Superb");
+truck2.AssignDriver("Driver2", false, 1);
 
 console.log("Trip Truck2:");
 truck2.trip();
