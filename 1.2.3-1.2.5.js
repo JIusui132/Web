@@ -5,8 +5,8 @@ const car1 = new Object();
 car1.color = "Green";
 car1.maxSpeed = 300;
 car1.driver = {
-    name: "Vlad Gerula", 
-    category: "C",
+    name: "Driver", 
+    category: "B",
     personalLimitations: "No driving at night"
 };
 car1.tuning = true; 
