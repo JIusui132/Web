@@ -3,8 +3,8 @@ const car2 = {
   color: "Green",
   maxSpeed: 300,
   driver: {
-      name: "Vlad Gerula",
-      category: "B",
+      name: "Driver2",
+      category: "A",
       personalLimitations: null
   },
   tuning: false, 
