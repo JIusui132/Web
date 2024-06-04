@@ -1,0 +1,6 @@
+[
+    {"id": 1, "name": "Смартфон", "shortname": "smartphone", "description": "Найновіший смартфон зі світлодіодним екраном", "price": 2000},
+    {"id": 2, "name": "Ноутбук", "shortname": "laptop", "description": "Потужний ноутбук для роботи та розваг", "price": 1500},
+    {"id": 3, "name": "Планшет", "shortname": "tablet", "description": "Легкий і зручний планшет для читання і перегляду відео", "price": 800},
+    {"id": 4, "name": "Годинник-смартфон", "shortname": "smartwatch", "description": "Сучасний годинник з функціями смартфона", "price": 300}
+]

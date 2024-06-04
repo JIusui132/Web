@@ -1,0 +1,6 @@
+[
+    {"id": 1, "name": "Війна і мир", "shortname": "warandpeace", "description": "Великий роман про війну і мир", "price": 30},
+    {"id": 2, "name": "Майстер і Маргарита", "shortname": "masterandmargarita", "description": "Знаменитий роман Михайла Булгакова", "price": 25},
+    {"id": 3, "name": "Гра престолів", "shortname": "gameofthrones", "description": "Серія фантастичних романів Джорджа Р. Р. Мартина", "price": 40},
+    {"id": 4, "name": "Гаррі Поттер і філософський камінь", "shortname": "harrypotter", "description": "Перша книга про пригоди Гаррі Поттера", "price": 20}
+]

@@ -1,0 +1,6 @@
+[
+    {"id": 1, "name": "Футболка", "shortname": "tshirt", "description": "Комфортна футболка для щоденного використання", "price": 20},
+    {"id": 2, "name": "Джинси", "shortname": "jeans", "description": "Модні джинси для будь-якого випадку", "price": 50},
+    {"id": 3, "name": "Спортивний костюм", "shortname": "tracksuit", "description": "Комплект для занять спортом та активного відпочинку", "price": 80},
+    {"id": 4, "name": "Сукня", "shortname": "dress", "description": "Елегантна сукня для вечірнього виходу", "price": 100}
+]

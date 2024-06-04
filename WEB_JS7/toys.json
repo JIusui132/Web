@@ -1,0 +1,6 @@
+[
+    {"id": 1, "name": "Лего", "shortname": "lego", "description": "Набір конструктора для творчості", "price": 50},
+    {"id": 2, "name": "Більярдний стіл", "shortname": "billiardtable", "description": "Мініатюрний більярдний стіл для дому", "price": 100},
+    {"id": 3, "name": "Іграшковий велосипед", "shortname": "toybike", "description": "Маленький велосипед для дітей", "price": 30},
+    {"id": 4, "name": "Конструктор", "shortname": "constructor", "description": "Конструктор для будування різних моделей", "price": 40}
+]
