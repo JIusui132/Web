@@ -21,7 +21,7 @@ function triangle(val1, type1, val2, type2) {
 
     // Перевірка на коректність введених значень
     if ((typeof val1 !== 'number' && isNaN(parseFloat(val1))) || (typeof val2 !== 'number' && isNaN(parseFloat(val2)))) {
-        console.log("Введені значення повинні бути числами або числовими рядками.");
+        console.log("Введені значення повинні бути числами.");
         return "failed";
     }
 
@@ -58,10 +58,6 @@ function triangle(val1, type1, val2, type2) {
                         break;
                 }
                 break;
-            
-
-
-
 
 
                 case "opposite angle":
@@ -83,10 +79,6 @@ function triangle(val1, type1, val2, type2) {
                                 break;
                             }
                         break;
-
-
-
-
         case "leg":
             switch (type2) {
                 case "hypotenuse":
@@ -130,6 +122,7 @@ function triangle(val1, type1, val2, type2) {
                     break;
             }
             break;
+
         case "hypotenuse":
             switch (type2) {
                 case "leg":
@@ -152,6 +145,7 @@ function triangle(val1, type1, val2, type2) {
                     break;
             }
             break;
+
         case "angle":
             switch (type2) {
                 case "leg":
@@ -186,3 +180,5 @@ function triangle(val1, type1, val2, type2) {
 
     return "success";
 }
+
+console.log(triangle(3, 'leg', 53.13, 'adjacent angle'));
